@@ -22,9 +22,11 @@ import{
   Icon,
   Title,
   Button,
-  Content
+  Content,
+  List,
+  ListItem
 } from 'native-base'
-
+import realm from './App/Modles/todo';
 export default class MakeToDo extends Component {
   constructor(props){
     super(props);
@@ -54,9 +56,13 @@ export default class MakeToDo extends Component {
             onPress={()=>this.addItem(this.state.text)}>
             <Text>Undo</Text>
           </Button>
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this._renderRow}/>
+          <List
+            dataArray={this.state.datas}
+            renderRow={(item)=>
+              <ListItem>
+                <Text>{item}</Text>
+              </ListItem>}>
+          </List>
         </Content>
       </Container>
     );
@@ -75,6 +81,22 @@ export default class MakeToDo extends Component {
   }
   _genRows(items:Array<string>):Array<string>{
     return items;
+  }
+  _onPress(item:string){
+    this.onSave(item);
+  }
+  onSave(item:string){
+    realm.write(()=>{
+      realm.create('ToDo',{name:item});
+    });
+  }
+  onFetch(){
+    let toDos=realm.objects('ToDo');
+    return toDos;
+  }
+  _genItems(){
+    let toDos=this.onFetch();
+    return toDos;
   }
 }
 
