@@ -19,7 +19,10 @@ import{
   Body,
   Title,
   Button,
-  Content
+  Content,
+  InputGroup,
+  Input,
+  Icon
 } from 'native-base';
 
 import realm from '../Modles/todo'
@@ -39,18 +42,19 @@ export default class TodoInput extends React.Component{
           <Body>
             <Title>MakeToDo-Input</Title>
           </Body>
-          <Right/>
+          <Right>
+            <Icon name="menu"/>
+          </Right>
         </Header>
         <Content paddr>
-          <TextInput
-            style={{height:40,borderColor:'green',borderWidth:1}}
-            onChangeText={(text)=>this.setState({text})}
-            value={this.state.text}
-            />
-        </Content>
-        <Content paddr>
+          <InputGroup regular>
+            <Input placeholder='ToDo名'
+              onChangeText={(text)=>this.setState({text})}
+              value={this.state.text}/>
+          </InputGroup>
           <Button full
-            onPress={()=>this.writeToDo(this.state.text)}>
+            onPress={()=>this.writeToDo(this.state.text)}
+            style={{paddingTop:10}}>
             <Text>登録</Text>
           </Button>
         </Content>
