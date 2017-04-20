@@ -1,6 +1,7 @@
 'use strict';
 
 import { AppRegistry } from 'react-native';
-import TodoInput from './App/View/input';
+import MakeToDoApp from './App/app'
 
-AppRegistry.registerComponent('MakeToDo', () => TodoInput);
+
+AppRegistry.registerComponent('MakeToDo', () => MakeToDoApp);
