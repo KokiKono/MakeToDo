@@ -13,7 +13,7 @@ import {
   Icon
 } from 'native-base';
 
-import realm from './Modles/todo';
+import realm from './Modles/Store';
 import ToDoInput from './View/toDoInput';
 import ToDoList from './View/toDoList';
 import styles from './View/styles';
