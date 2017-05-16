@@ -10,7 +10,7 @@ import {
   List,
   ListItem
 } from 'native-base';
-import realm from '../Modles/todo';
+import realm from '../Modles/Store';
 
 export default class ToDoList extends React.Component{
   constructor(props){

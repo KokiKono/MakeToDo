@@ -3,7 +3,7 @@
 import Realm from 'realm';
 
 class Store extends Realm.Object{}
-ToDo.schema={
+Store.schema={
   name:'ToDo',
   properties:{
     name:'string'
@@ -11,4 +11,4 @@ ToDo.schema={
 };
 
 
-export default new Realm({schema:[ToDo]});
+export default new Realm({schema:[Store]});
