@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import realm from '../Modles/todo'
+import realm from '../Modles/Store'
 import {
   Text
 }from 'react-native';
