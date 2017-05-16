@@ -50,10 +50,7 @@ export default class MakeToDoApp extends React.Component{
     console.log('onPressMenu');
     let route={
       title:'MakeToDo-List',
-      component:ToDoList,
-      passProps:{
-        items:realm.objects('ToDo')
-      }
+      component:ToDoList
     }
     this.refs.nav.push(route);
   }
